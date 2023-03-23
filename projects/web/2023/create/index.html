@@ -77,8 +77,20 @@
         </script>
         <button onclick="copy()" style="font-size:large; padding: 5px;">Copy code</button>
         <select name="" id="version">
-            <option value="Version 2023">Version 2023</option>
+
+            <option value="nothing" selected="selected">Version 2023</option>
+            <option value="https://educpk.github.io/beta/projects/web/2023/create/">Version 2023 Beta</option>
+
         </select>
+        <script>
+            const v = document.getElementById("version");
+            v.onchange = function () {
+                var op = this.options[this.selectedIndex].value;
+                if (op.value != "nothing") {
+                    window.location.replace(op)
+                }
+            }
+        </script>
     </nav>
     
     <div class="empty">
